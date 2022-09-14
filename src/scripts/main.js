@@ -38,7 +38,7 @@ alt="Restorant Picture"
 <div class="body">
 <h4 class="name">${resto.name}</h4>
 <span class="rate">
-i class="fa-solid fa-star icon"></i> <b>${resto.rating}/5</b>
+<i class="fa-solid fa-star icon"></i> <b>${resto.rating}/5</b>
 </span>
 <div class="city">
 <i class="fa-solid fa-location-dot"> </i> 
