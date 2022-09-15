@@ -186,6 +186,15 @@ main .container .list {
 }
 /* card */
 
+resto-card {
+	background-color: #fdfaf6;
+	border-radius: 10px;
+	box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+	overflow: hidden;
+	transition: 0.4s;
+	cursor: pointer;
+}
+
 resto-card:hover {
 	position: relative;
 	top: 0;
@@ -194,7 +203,11 @@ resto-card:hover {
 }
 
 resto-card:focus {
-	outline: 1px solid #557571;
+	position: relative;
+	top: 0;
+	left: 0;
+	transform: scale(0.9, 0.9);
+	border: 1px solid #557571;
 }
 
 /* card end */

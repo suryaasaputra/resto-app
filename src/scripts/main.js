@@ -24,11 +24,13 @@ const main = () => {
   hero.addEventListener('click', () => {
     menu.classList.remove('open');
   });
-
   const showResto = (restos) => {
     listElement.innerHTML = '';
     restos.forEach((resto) => {
       const restoCard = document.createElement('resto-card');
+      restoCard.setAttribute('role', 'button');
+      restoCard.setAttribute('tabindex', '0');
+      restoCard.setAttribute('id', resto.id);
       restoCard.resto = resto;
       listElement.appendChild(restoCard);
     });

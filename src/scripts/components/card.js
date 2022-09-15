@@ -1,16 +1,12 @@
 /* eslint-disable require-jsdoc */
 class RestoCard extends HTMLElement {
-  constructor() {
-    super();
-    this._shadowRoot = this.attachShadow({mode: 'open'});
-  }
   set resto(resto) {
     this._resto = resto;
     this.render();
   }
 
   render() {
-    this._shadowRoot.innerHTML =`
+    this.innerHTML =`
 <style>
 * {
 margin: 0;
@@ -19,21 +15,11 @@ box-sizing: border-box;
 }
 
 
-:host {
-background-color: #fdfaf6;
-border-radius: 10px;
-box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-overflow: hidden;
-transition: 0.4s;
-cursor: pointer;
-}
-
-
-.header {
+.card-header {
 width: 100%;
 }
 
-.header img {
+.card-header img {
 width: 100%;
 height: 200px;
 object-fit: cover;
@@ -101,8 +87,8 @@ margin-top: auto;
 }
 </style>
 
-<div role="button" tabindex="0" id="${this._resto.id}">
-<div class="header">
+<div class="card">
+<div class="card-header">
 <img
 src=${this._resto.pictureId}
 alt="Restorant Picture"
