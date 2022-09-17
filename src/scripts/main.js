@@ -3,6 +3,8 @@ import restaurants from '../DATA.json';
 import './components/card';
 const listElement = document.getElementById('listResto');
 const menuButton = document.getElementById('menuButton');
+const searchButton =document.getElementById('searchButton');
+const searchKeyword = document.getElementById('searchKeyword');
 const menu = document.getElementById('menu');
 const hero = document.querySelector('.hero');
 
@@ -21,8 +23,15 @@ const main = () => {
     e.stopPropagation();
   });
 
+  searchButton.addEventListener('click', (e)=>{
+    searchKeyword.classList.toggle('active');
+    e.stopPropagation();
+    e.preventDefault();
+  });
+
   hero.addEventListener('click', () => {
     menu.classList.remove('open');
+    searchKeyword.classList.remove('active');
   });
   const showResto = (restos) => {
     listElement.innerHTML = '';

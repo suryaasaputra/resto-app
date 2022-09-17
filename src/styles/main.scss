@@ -62,8 +62,9 @@ header {
 }
 
 .header .brand {
-	margin: 0 auto;
+	margin: 0 15px;
 	padding: 5px;
+	text-align: center;
 	/* line-height: 1; */
 }
 
@@ -79,19 +80,13 @@ header {
 
 nav {
 	position: absolute;
-	top: 0;
+	top: 75px;
 	left: -330px;
-
 	width: 40%;
-	// margin: -100px 0 0 -50px;
 	padding: 20px;
-
-	// opacity: 0.6;
+	transition: all 0.7s;
 	background: #ededed;
 	list-style-type: none;
-
-	transform: translate(-300px, 0);
-
 	border-radius: 15px;
 	display: flex;
 	flex-direction: column;
@@ -120,10 +115,50 @@ nav li a:hover {
 }
 
 .open {
-	top: 30px;
 	left: -15px;
-	transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-	transform: none;
+}
+
+header form {
+	display: flex;
+	align-items: center;
+	justify-content: end;
+	margin-left: auto;
+}
+
+form input {
+	width: 0;
+	border: none;
+	outline: none;
+	transition: 0.6s;
+}
+
+form .active {
+	width: 75%;
+	border-radius: 12px;
+	border: 1px solid #eee;
+	padding: 10px 5px;
+	background: none;
+	color: #ededed;
+	transition: 0.6s;
+	font-size: 16px;
+	box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.3);
+}
+
+form .active::placeholder {
+	color: #ededed;
+}
+
+header form button {
+	font-family: "Montserrat", sans-serif;
+	padding: 10px 15px;
+	/* background-color: rgb(5, 114, 54); */
+	background: none;
+	cursor: pointer;
+	color: rgb(235, 235, 235);
+	font-size: 32px;
+	border-radius: 15px;
+	outline-style: none;
+	border-style: none;
 }
 /* header end */
 /* main start */
@@ -265,9 +300,8 @@ footer .copyright {
 		position: static;
 		justify-content: center;
 		align-items: center;
-		margin-left: auto;
+		margin: 0 auto;
 		padding: 0;
-		transform: none;
 	}
 
 	nav li {
