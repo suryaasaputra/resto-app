@@ -1,5 +1,4 @@
 import DrawerInitiator from '../utils/drawer-initiator';
-import SearchBarInitiator from '../utils/searchbar-initiator';
 import UrlParser from '../routes/url-parser';
 import routes from '../routes/route';
 
@@ -14,12 +13,6 @@ class App {
 
   _initialAppShell() {
     DrawerInitiator.init({
-      button: this._button,
-      drawer: this._drawer,
-      content: this._content,
-    });
-
-    SearchBarInitiator.init({
       button: this._button,
       drawer: this._drawer,
       content: this._content,

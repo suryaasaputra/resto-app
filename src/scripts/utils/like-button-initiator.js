@@ -1,4 +1,5 @@
 import FavoriteRestoIdb from '../data/favorite-resto';
+import Swal from 'sweetalert2';
 import {
   createLikeButtonTemplate,
   createLikedButtonTemplate} from '../view/templates/templates-creator';
@@ -33,6 +34,13 @@ const LikeButtonInitiator = {
     likeButton.addEventListener('click', async () => {
       await FavoriteRestoIdb.putResto(this._resto);
       this._renderButton();
+      Swal.fire({
+        icon: 'success',
+        color: '#557571',
+        title: 'Resto Added To Favorites',
+        showConfirmButton: false,
+        timer: 1000,
+      });
     });
   },
 
@@ -43,6 +51,13 @@ const LikeButtonInitiator = {
     likeButton.addEventListener('click', async () => {
       await FavoriteRestoIdb.deleteResto(this._resto.id);
       this._renderButton();
+      Swal.fire({
+        icon: 'success',
+        color: '#557571',
+        title: 'Resto Removed From Favorites',
+        showConfirmButton: false,
+        timer: 1000,
+      });
     });
   },
 };

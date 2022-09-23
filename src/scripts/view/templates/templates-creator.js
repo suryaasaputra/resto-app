@@ -1,4 +1,14 @@
+/* eslint-disable max-len */
 import CONFIG from '../../globals/config';
+import '../components/resto-item';
+
+const heroTemplate = () => `<div class="hero-title">
+<h2>Find Your Most Favorite Resto</h2>
+<p>Explore the restautant from all over Indonesia.</p>
+</div>
+
+<img src="./images/heros/hero-image_2.jpg" alt="Hero Background Image" />
+`;
 
 
 const createRestoDetailTemplate = (resto) => `
@@ -27,10 +37,8 @@ const createRestoDetailTemplate = (resto) => `
     <i class="fa-solid fa-star icon "></i><b>${resto.rating}/5</b>
     </div>
     </div>
-    <div class="resto-description">
     <h3>Description</h3>
     <p>${resto.description}</p>
-    </div>
     <h3>Foods</h3>
     <p>${resto.menus.foods.map((food)=>`${food.name}`).join(', ')}</p>
     <h3>Drinks</h3>
@@ -45,16 +53,33 @@ const createRestoDetailTemplate = (resto) => `
     <p class="review-comment">${review.review}</p>
     </div>`).join('')}</div>
   </div>
-  <div class="post-review">
-  <form>
-  
+  <div class="resto-post-review">
+  <h3>Post a new review</h3>
+  <form id="reviewForm">
+    <div class="input-group">
+    <input placeholder="Your Name" 
+    type="text" class="name-input" id="reviewerName" required>
+    </div>
+    <div class="input-group">
+    <textarea placeholder="Your Review" rows="5" class="review-input" id="reviewText" required></textarea>
+    </div>
+    <button id="submit-review" type="submit">Post Review</button>
   </form>
-
-
   </div>
 
-  </div>
+
 `;
+
+const createRestoItemTemplate = (restaurants) => {
+  return restaurants.forEach((resto) => {
+    const restoCard = document.createElement('resto-card');
+    restoCard.setAttribute('role', 'button');
+    restoCard.setAttribute('tabindex', '0');
+    restoCard.setAttribute('id', resto.id);
+    restoCard.resto = resto;
+    document.getElementById('listResto').appendChild(restoCard);
+  });
+};
 
 const createLikeButtonTemplate = () => `
   <button aria-label="Add to favorite resto" id="likeButton" class="like">
@@ -67,8 +92,11 @@ const createLikedButtonTemplate = () => `
    <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
   </button>
 `;
+
 export {
+  heroTemplate,
   createRestoDetailTemplate,
+  createRestoItemTemplate,
   createLikeButtonTemplate,
   createLikedButtonTemplate,
 };

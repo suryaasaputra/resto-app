@@ -1,5 +1,5 @@
 /* eslint-disable require-jsdoc */
-import CONFIG from '../globals/config';
+import CONFIG from '../../globals/config';
 class RestoCard extends HTMLElement {
   set resto(resto) {
     this._resto = resto;

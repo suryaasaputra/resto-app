@@ -47,6 +47,7 @@
   "dependencies": {
     "idb": "^7.0.2",
     "regenerator-runtime": "^0.13.9",
+    "sweetalert2": "^11.4.33",
     "workbox-window": "^6.5.4"
   }
 }
