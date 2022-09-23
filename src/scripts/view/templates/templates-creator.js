@@ -13,7 +13,7 @@ const heroTemplate = () => `<div class="hero-title">
 
 const createRestoDetailTemplate = (resto) => `
   
-  <div class="resto-detail">
+  <div class="resto-detail" id="content"  tabindex="0">
   <div class="headline">
   <h2 class="detail-title">${resto.name}</h2>
   </div>
