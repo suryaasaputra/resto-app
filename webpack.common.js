@@ -4,6 +4,7 @@ const path = require('path');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
@@ -83,6 +84,28 @@ module.exports = {
     ],
   },
   plugins: [
+    new WebpackPwaManifest({
+      filename: 'webappmanifest.json',
+      publicPath: '/',
+      name: 'Resto-App',
+      short_name: 'Resto.',
+      display: 'standalone',
+      description: 'Restaurant recommendation across Indonesia',
+      background_color: '#f9f9f9',
+      theme_color: '#557571',
+      crossorigin: 'anonymous',
+      icons: [
+        {
+          src: path.resolve('src/public/icons/icon.png'),
+          sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+        },
+        {
+          src: path.resolve('src/public/icons/maskable-icon.png'),
+          size: '1024x1024',
+          purpose: 'maskable',
+        },
+      ],
+    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/templates/index.html'),
@@ -93,6 +116,9 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/public'),
           to: path.resolve(__dirname, 'dist'),
+          globOptions: {
+            ignore: ['**/icons/**'],
+          },
         },
       ],
     }),
@@ -105,6 +131,7 @@ module.exports = {
       ],
       overrideExtension: true,
     }),
+
     // new BundleAnalyzerPlugin(),
 
     new WorkboxWebpackPlugin.GenerateSW({
