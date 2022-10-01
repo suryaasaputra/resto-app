@@ -1,0 +1,48 @@
+{
+  "icons": [
+    {
+      "src": "/icon_1024x1024.5cd5cfbddb25767a53249e8f96bc1ce1.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon_512x512.9b89d537f69082bb01466937c7fbd2d6.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_384x384.8e67ec2facd5fb11ca0ef7a61f928c7f.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_256x256.65fa5806863e87f3e904e09e97ec1aa8.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_192x192.f47aae86bcb7876165f6d8a8dd05ff92.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_128x128.211a1ca6ba31046efcec2c0e57c9b280.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_96x96.2df6881116d7c5a5cbdbb9d38a32280d.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "name": "Resto-App",
+  "short_name": "Resto.",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": ".",
+  "description": "Restaurant recommendation across Indonesia",
+  "background_color": "#f9f9f9",
+  "theme_color": "#557571"
+}

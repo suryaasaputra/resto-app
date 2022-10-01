@@ -380,7 +380,16 @@ window.addEventListener('hashchange', function () {
   app.renderPage();
 });
 window.addEventListener('load', function () {
-  app.renderPage(); // swRegister();
+  app.renderPage();
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.bundle.js').then(function (registration) {
+      console.log('SW registered: ', registration);
+    })["catch"](function (registrationError) {
+      console.log('SW registration failed: ', registrationError);
+    });
+  } // swRegister();
+
 });
 
 /***/ })

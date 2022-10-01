@@ -133,6 +133,22 @@ module.exports = {
     }),
     new WorkboxWebpackPlugin.GenerateSW({
       swDest: './sw.bundle.js',
+      clientsClaim: true,
+      skipWaiting: true,
+      runtimeCaching: [
+        {
+          urlPattern: ({url}) => url.origin === 'https://restaurant-api.dicoding.dev/',
+          handler: 'NetworkFirst',
+          options: {
+            cacheName: 'api-cache',
+          },
+        },
+        {
+          urlPattern: /^https:\/\/fonts\.gstatic\.com/,
+          handler: 'StaleWhileRevalidate',
+        },
+      ],
+
 
     }),
 
