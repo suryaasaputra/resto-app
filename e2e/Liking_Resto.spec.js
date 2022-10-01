@@ -19,6 +19,7 @@ Scenario('liking one resto and unlike the resto ', async ({I}) => {
   I.seeElement('#likeButton');
   I.click('#likeButton');
   I.amOnPage('/#/favorites');
+  I.waitForElement('resto-card', 5);
   I.seeElement('resto-card');
 
   const likedRestoId = await I.grabAttributeFrom('resto-card', 'id');
@@ -26,6 +27,7 @@ Scenario('liking one resto and unlike the resto ', async ({I}) => {
 
   // unlike resto
   I.amOnPage('/#/favorites');
+  I.waitForElement('.restoItem', 5);
   I.seeElement('.restoItem');
   I.click('.restoItem');
   I.waitForElement('#likeButton', 5);
