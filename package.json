@@ -24,6 +24,7 @@
     "codeceptjs": "^3.3.5",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
+    "css-minimizer-webpack-plugin": "^4.2.0",
     "eslint": "^8.23.1",
     "eslint-config-google": "^0.14.0",
     "file-loader": "^6.2.0",
