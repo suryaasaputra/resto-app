@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable require-jsdoc */
 import CONFIG from '../../globals/config';
 class RestoCard extends HTMLElement {
@@ -11,8 +12,7 @@ class RestoCard extends HTMLElement {
 <a href="/#/detail/${this._resto.id}">
 <div class="card">
 <div class="card-header">
-<img
-src=${CONFIG.BASE_IMAGE_URL}${this._resto.pictureId}
+<img class="lazyload" data-src=${CONFIG.BASE_IMAGE_URL_SMALL}${this._resto.pictureId}
 alt="Restorant Picture"
 />
 </div>

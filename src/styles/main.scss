@@ -462,12 +462,21 @@ main .section-title {
 	color: $title;
 }
 
+main .section-title h3 {
+	border-bottom: 3px solid #557571;
+}
+
 main .container .list {
 	display: grid;
 	gap: 15px 15px;
 	width: 90%;
-	justify-content: center;
 	margin-bottom: 20px;
+}
+
+main .container .no-favorites {
+	color: #413f42;
+	font-size: 18px;
+	padding: 20px;
 }
 /* card */
 

@@ -1,9 +1,11 @@
+/* eslint-disable max-len */
 import FavoriteRestoIdb from '../../data/favorite-resto';
+import {createRestoItemTemplate} from '../templates/templates-creator';
 
 const Favorites = {
   async render() {
     return `
-      <section class="container">
+<section class="container" id="container">
 <div class="section-title" id="content"  tabindex="0">
 <h3>Favorites Restaurant</h3>
 </div>
@@ -14,14 +16,15 @@ const Favorites = {
 
   async afterRender() {
     const restos = await FavoriteRestoIdb.getAllRestos();
-    restos.forEach((resto) => {
-      const restoCard = document.createElement('resto-card');
-      restoCard.setAttribute('role', 'button');
-      restoCard.setAttribute('tabindex', '0');
-      restoCard.setAttribute('id', resto.id);
-      restoCard.resto = resto;
-      document.getElementById('listResto').appendChild(restoCard);
-    });
+    if (!restos.length) {
+      // document.getElementById('listResto').remove();
+      const capt = document.createElement('div');
+      capt.classList.add(('no-favorites'));
+      capt.innerText= 'Nothing in here';
+      document.getElementById('container').appendChild(capt);
+      return;
+    }
+    createRestoItemTemplate(restos);
   },
 };
 

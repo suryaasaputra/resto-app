@@ -6,8 +6,13 @@ const heroTemplate = () => `<div class="hero-title">
 <h2>Find Your Most Favorite Resto</h2>
 <p>Explore the restautant from all over Indonesia.</p>
 </div>
-
-<img src="./images/heros/hero-image_2.jpg" alt="Hero Background Image" />
+<picture>
+<source media="(max-width: 600px)" type="image/webp" srcset="./images/heros/hero-image_2-small.webp">
+<source media="(max-width: 600px)" type="image/jpeg" srcset="./images/heros/hero-image_2-small.jpg">
+<source  type="image/webp" srcset="./images/heros/hero-image_2-large.webp">
+<source  type="image/jpeg" srcset="./images/heros/hero-image_2-large.jpg">
+<img src="./images/heros/hero-image_2-large.jpg" alt="Hero Background Image">
+</picture>
 `;
 
 
@@ -19,7 +24,7 @@ const createRestoDetailTemplate = (resto) => `
   </div>
   <div class="resto-image">
     <img class="resto__poster" 
-    src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="${resto.name}" />
+     src="${CONFIG.BASE_IMAGE_URL_LARGE + resto.pictureId}" alt="${resto.name} />
   </div>
   <div class="resto-info">
     <div class="resto-overview">
@@ -76,18 +81,19 @@ const createRestoItemTemplate = (restaurants) => {
     restoCard.setAttribute('role', 'button');
     restoCard.setAttribute('tabindex', '0');
     restoCard.setAttribute('id', resto.id);
+    restoCard.setAttribute('class', 'restoItem');
     restoCard.resto = resto;
     document.getElementById('listResto').appendChild(restoCard);
   });
 };
 
-const createLikeButtonTemplate = () => `
+const createLikeRestoButtonTemplate = () => `
   <button aria-label="Add to favorite resto" id="likeButton" class="like">
      <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
   </button>
 `;
 
-const createLikedButtonTemplate = () => `
+const createUnlikeRestoButtonTemplate = () => `
   <button aria-label="Remove from favorite resto" id="likeButton" class="like">
    <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
   </button>
@@ -97,6 +103,6 @@ export {
   heroTemplate,
   createRestoDetailTemplate,
   createRestoItemTemplate,
-  createLikeButtonTemplate,
-  createLikedButtonTemplate,
+  createLikeRestoButtonTemplate,
+  createUnlikeRestoButtonTemplate,
 };
