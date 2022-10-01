@@ -362,15 +362,14 @@ var CONFIG = {
 /* harmony import */ var lazysizes__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lazysizes__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var lazysizes_plugins_parent_fit_ls_parent_fit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(770);
 /* harmony import */ var lazysizes_plugins_parent_fit_ls_parent_fit__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lazysizes_plugins_parent_fit_ls_parent_fit__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _view_app__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(846);
-/* harmony import */ var _utils_sw_register__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(867);
+/* harmony import */ var _view_app__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(203);
 
 /* for async await transpile */
 
 
 
 
-
+ // import swRegister from './utils/sw-register';
 
 var app = new _view_app__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z({
   button: document.querySelector('#menuButton'),
@@ -381,8 +380,7 @@ window.addEventListener('hashchange', function () {
   app.renderPage();
 });
 window.addEventListener('load', function () {
-  app.renderPage();
-  (0,_utils_sw_register__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z)();
+  app.renderPage(); // swRegister();
 });
 
 /***/ })
