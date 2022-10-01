@@ -1,7 +1,6 @@
 /* eslint-disable max-len */
 /* eslint-disable new-cap */
 const path = require('path');
-const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
@@ -133,10 +132,5 @@ module.exports = {
     }),
 
     // new BundleAnalyzerPlugin(),
-
-    new WorkboxWebpackPlugin.GenerateSW({
-      swDest: './sw.bundle.js',
-
-    }),
   ],
 };

@@ -10,8 +10,7 @@
     "serve": "http-server dist",
     "build-serve": "npm run build && npm run serve",
     "lint": "eslint ./src",
-    "e2e": "codeceptjs run --steps",
-    "build-image": "node sharp.js"
+    "e2e": "codeceptjs run --steps"
   },
   "keywords": [],
   "author": "surya <suryaaasaputra.s@gmail.com>",
